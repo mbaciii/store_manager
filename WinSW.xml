@@ -1,0 +1,17 @@
+
+<service>
+
+  <id>webapp</id>
+  <name>webapp</name>
+  <description>This service runs webapp system.</description>
+  <executable>C:\Users\User\AppData\Local\Programs\Python\Python312\python.exe</executable>
+  <arguments>-m waitress --listen=*:8000 store_manager.wsgi:application</arguments>
+  <executable>C:\Users\User\AppData\Local\Programs\Python\Python312\python.exe</executable>
+  <arguments>C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\site-packages\waitress\__main__.py --listen=*:8000 store_manager.wsgi:application</arguments>
+    <workingdirectory>C:\Users\User\store_manager</workingdirectory>
+
+  <log mode="roll-by-size">
+      <sizeThreshold>10240</sizeThreshold>
+      <keepFiles>8</keepFiles>
+  </log>
+</service>

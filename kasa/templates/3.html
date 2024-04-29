@@ -1,0 +1,51 @@
+<!-- cashier.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cashier</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <style>
+      .product-btn {
+        background-color: white; /* Default color */
+        color: #007bff;
+      }
+
+      .product-btn.selected {
+        background-color: #007bff; /* Color when selected */
+        color: white;
+      }
+    </style>
+</head>
+<body>
+    <h1>Product List</h1>
+    <form method="post">
+        {% csrf_token %}
+
+        {% for product in products %}
+            <button class="btn btn-lg btn-primary mb-2 product-btn" data-product-id="{{ product.id }}">{{ product.name }}</button>
+        {% endfor %}
+        <select name="product_id">
+            {% for product in products %}
+            <option value="{{ product.id }}">{{ product.name }}</option>
+            {% endfor %}
+        </select>
+        <input type="number" name="price" placeholder="Price">
+        <button type="submit">Add</button>
+    </form>
+
+    <h2>Sale Items</h2>
+    <ul>
+        {% for item in request.session.sale_items %}
+        <li>{{ item.product_id }} - {{ item.price }}</li>
+        {% endfor %}
+    </ul>
+
+    <form method="post" action="{% url 'register_sale' %}">
+        {% csrf_token %}
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>

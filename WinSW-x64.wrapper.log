@@ -1,0 +1,20 @@
+2024-04-13 13:32:30,929 DEBUG - Starting WinSW in console mode
+2024-04-13 13:32:33,785 DEBUG - Starting WinSW in console mode
+2024-04-13 13:32:33,845 INFO  - Stopping service 'webapp (webapp)'...
+2024-04-13 13:32:33,860 INFO  - Service 'webapp (webapp)' stopped successfully.
+2024-04-13 13:32:36,265 DEBUG - Starting WinSW in console mode
+2024-04-13 13:32:38,353 DEBUG - Starting WinSW in console mode
+2024-04-13 13:32:38,422 INFO  - Starting service 'webapp (webapp)'...
+2024-04-13 13:32:38,993 INFO  - Service 'webapp (webapp)' started successfully.
+2024-04-13 13:36:35,774 DEBUG - Starting WinSW in console mode
+2024-04-13 13:36:35,884 INFO  - Installing service 'webapp (webapp)'...
+2024-04-13 13:36:35,930 ERROR - A service with ID 'webapp' already exists.
+2024-04-13 13:36:35,940 FATAL - Failed to install the service. The specified service already exists.
+2024-04-13 13:41:38,349 DEBUG - Starting WinSW in console mode
+2024-04-13 13:41:40,985 DEBUG - Starting WinSW in console mode
+2024-04-13 13:41:41,235 INFO  - Stopping service 'webapp (webapp)'...
+2024-04-13 13:41:41,250 INFO  - Service 'webapp (webapp)' stopped successfully.
+2024-04-13 13:42:43,631 DEBUG - Starting WinSW in console mode
+2024-04-13 13:42:45,887 DEBUG - Starting WinSW in console mode
+2024-04-13 13:42:45,954 INFO  - Starting service 'webapp (webapp)'...
+2024-04-13 13:42:46,704 INFO  - Service 'webapp (webapp)' started successfully.

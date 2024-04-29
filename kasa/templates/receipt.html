@@ -1,0 +1,41 @@
+from django.http import HttpResponse
+from django.template.loader import render_to_string
+import win32print
+import win32ui
+import win32con
+
+def print_receipt(request, products):
+    # Render the receipt template with the product data
+    receipt_data = {
+        'products': products,
+    }
+    receipt_html = render_to_string('receipt.html', receipt_data)
+
+    # Create a printer device context
+    printer_name = win32print.GetDefaultPrinter()
+    printer_handle = win32print.OpenPrinter(printer_name)
+    printer_dc = win32ui.CreateDC()
+    printer_dc.CreatePrinterDC(printer_name)
+
+    # Start a print job
+    job_info = ("Receipt", None, {"DesiredAccess": win32print.PRINTER_ACCESS_USE})
+    printer_handle = win32print.OpenPrinter(printer_name, job_info)
+    win32print.StartDocPrinter(printer_handle, 1, ("Receipt", None, "RAW"))
+    win32print.StartPagePrinter(printer_handle)
+
+    # Print the receipt content
+    printer_dc.StartDoc(receipt_html)
+    printer_dc.StartPage()
+
+    # Set the printer font and print the HTML content
+    printer_dc.SetMapMode(win32con.MM_TEXT)
+    printer_dc.DrawText(receipt_html, (100, 100), win32con.DT_LEFT)
+
+    # End the print job
+    printer_dc.EndPage()
+    printer_dc.EndDoc()
+    win32print.EndPagePrinter(printer_handle)
+    win32print.ClosePrinter(printer_handle)
+
+    # Return a response to indicate successful printing
+    return HttpResponse("Receipt printed successfully")

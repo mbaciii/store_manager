@@ -46,7 +46,7 @@ def register_sale(request):
 
         with open(r'db1.sqlite3', 'rb') as file:
             files = {'file': file}
-            response = requests.post('http://127.0.0.1:8080/upload/', files=files)
+            response = requests.post('https://mbaci.pythonanywhere.com/upload/', files=files, timeout=10)
 
         # Check the response status code
         if response.status_code == 201:

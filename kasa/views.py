@@ -28,6 +28,7 @@ import datetime
 import json
 from django.http import JsonResponse
 
+import requests
 
 def register_sale(request):
     if request.method == 'POST':
@@ -42,6 +43,18 @@ def register_sale(request):
         # upload_script_path = os.path.join(os.path.dirname(__file__), r'C:\Users\User\store_manager\manager\uploadDB.py')
         # exec(open(upload_script_path).read())
         # print(upload_script_path)
+
+        with open(r'db1.sqlite3', 'rb') as file:
+            files = {'file': file}
+            response = requests.post('http://127.0.0.1:8080/upload/', files=files)
+
+        # Check the response status code
+        if response.status_code == 201:
+            print("POST request was successful.")
+            print("Response:", response.json())
+        else:
+            print("POST request failed with status code:", response.status_code)
+
         return JsonResponse({'success': True, 'last_sale':sale_items_data})
     else:
         return JsonResponse({'success': False})

@@ -30,6 +30,23 @@ from django.http import JsonResponse
 
 import requests
 
+def perditesim(request):
+    try:
+        with open(r'db4.sqlite3', 'rb') as file:
+            files = {'file': file}
+            response = requests.post('https://mbaci.pythonanywhere.com/upload/', files=files, timeout=10)
+
+        # Check the response status code
+        if response.status_code == 201:
+            print("POST request was successful.")
+            print("Response:", response.json())
+        else:
+            print("POST request failed with status code:", response.status_code)
+    except:
+        pass
+
+    return redirect(request.META.get('HTTP_REFERER'))
+
 def register_sale(request):
     if request.method == 'POST':
         sale_items_json = request.POST.get('sale_items')
@@ -43,17 +60,7 @@ def register_sale(request):
         # upload_script_path = os.path.join(os.path.dirname(__file__), r'C:\Users\User\store_manager\manager\uploadDB.py')
         # exec(open(upload_script_path).read())
         # print(upload_script_path)
-
-        with open(r'db1.sqlite3', 'rb') as file:
-            files = {'file': file}
-            response = requests.post('https://mbaci.pythonanywhere.com/upload/', files=files, timeout=10)
-
-        # Check the response status code
-        if response.status_code == 201:
-            print("POST request was successful.")
-            print("Response:", response.json())
-        else:
-            print("POST request failed with status code:", response.status_code)
+        perditesim(request)
 
         return JsonResponse({'success': True, 'last_sale':sale_items_data})
     else:

@@ -10,3 +10,66 @@
 2024-04-13 15:06:16,517 DEBUG - Starting WinSW in console mode
 2024-04-13 15:06:16,613 INFO  - Uninstalling service 'webapp (webapp)'...
 2024-04-13 15:06:16,633 INFO  - Service 'webapp (webapp)' was uninstalled successfully.
+2024-05-22 19:29:18,484 DEBUG - Starting WinSW in console mode
+2024-05-22 19:29:18,572 FATAL - Unhandled exception
+System.Exception: Unknown command: -stop
+   at WinSW.Program.Run(String[] argsArray, IServiceConfig config)
+   at WinSW.Program.Main(String[] args)
+2024-05-22 19:29:22,080 DEBUG - Starting WinSW in console mode
+2024-05-22 19:29:24,602 DEBUG - Starting WinSW in console mode
+2024-05-22 19:29:24,680 FATAL - The specified service does not exist as an installed service.
+2024-05-22 19:29:34,933 DEBUG - Starting WinSW in console mode
+2024-05-22 19:29:37,402 DEBUG - Starting WinSW in console mode
+2024-05-22 19:29:37,455 INFO  - Uninstalling service 'webapp (webapp)'...
+2024-05-22 19:29:37,467 WARN  - Service 'webapp (webapp)' does not exist.
+2024-05-22 19:29:41,300 DEBUG - Starting WinSW in console mode
+2024-05-22 19:29:43,339 DEBUG - Starting WinSW in console mode
+2024-05-22 19:29:43,407 FATAL - The specified service does not exist as an installed service.
+2024-05-22 19:30:35,953 DEBUG - Starting WinSW in console mode
+2024-05-22 19:30:36,010 FATAL - Unhandled exception
+System.Exception: Unknown command: -stop
+   at WinSW.Program.Run(String[] argsArray, IServiceConfig config)
+   at WinSW.Program.Main(String[] args)
+2024-05-22 19:30:41,428 DEBUG - Starting WinSW in console mode
+2024-05-22 19:30:41,479 FATAL - Unhandled exception
+System.Exception: Unknown command: list
+   at WinSW.Program.Run(String[] argsArray, IServiceConfig config)
+   at WinSW.Program.Main(String[] args)
+2024-05-22 19:30:47,741 DEBUG - Starting WinSW in console mode
+2024-05-22 19:34:23,301 DEBUG - Starting WinSW in console mode
+2024-05-22 19:34:26,478 DEBUG - Starting WinSW in console mode
+2024-05-22 19:34:26,558 INFO  - Installing service 'webapp (webapp)'...
+2024-05-22 19:34:26,601 INFO  - Service 'webapp (webapp)' was installed successfully.
+2024-05-22 19:34:30,543 DEBUG - Starting WinSW in console mode
+2024-05-22 19:34:33,044 DEBUG - Starting WinSW in console mode
+2024-05-22 19:34:33,116 INFO  - Starting service 'webapp (webapp)'...
+2024-05-22 19:34:34,075 DEBUG - Starting WinSW in service mode
+2024-05-22 19:34:34,173 INFO  - Service 'webapp (webapp)' started successfully.
+2024-05-22 19:34:34,486 INFO  - Starting C:\Users\User\AppData\Local\Programs\Python\Python312\python.exe -m waitress --listen=*:8000 store_manager.wsgi:application
+2024-05-22 19:34:34,538 INFO  - Started process 15340
+2024-05-22 19:34:34,564 DEBUG - Forwarding logs of the process System.Diagnostics.Process (python) to WinSW.SizeBasedRollingLogAppender
+2024-05-22 19:34:50,955 DEBUG - Starting WinSW in console mode
+2024-05-22 19:34:52,883 DEBUG - Starting WinSW in console mode
+2024-05-22 19:34:52,944 INFO  - Stopping service 'webapp (webapp)'...
+2024-05-22 19:34:52,960 INFO  - Service 'webapp (webapp)' stopped successfully.
+2024-05-22 19:34:52,962 INFO  - Stopping webapp
+2024-05-22 19:34:52,962 DEBUG - ProcessKill 15340
+2024-05-22 19:34:52,969 DEBUG - Stopping process 15340...
+2024-05-22 19:34:53,965 DEBUG - Process 15340 canceled with code 0.
+2024-05-22 19:34:53,973 INFO  - Finished webapp
+2024-05-22 19:34:58,030 DEBUG - Starting WinSW in console mode
+2024-05-22 19:35:00,421 DEBUG - Starting WinSW in console mode
+2024-05-22 19:35:00,479 INFO  - Uninstalling service 'webapp (webapp)'...
+2024-05-22 19:35:00,489 INFO  - Service 'webapp (webapp)' was uninstalled successfully.
+2024-05-22 19:40:18,996 DEBUG - Starting WinSW in console mode
+2024-05-22 19:40:21,465 DEBUG - Starting WinSW in console mode
+2024-05-22 19:40:21,517 INFO  - Installing service 'webapp (webapp)'...
+2024-05-22 19:40:21,545 INFO  - Service 'webapp (webapp)' was installed successfully.
+2024-05-22 19:40:25,924 DEBUG - Starting WinSW in console mode
+2024-05-22 19:40:28,230 DEBUG - Starting WinSW in console mode
+2024-05-22 19:40:28,498 INFO  - Starting service 'webapp (webapp)'...
+2024-05-22 19:40:29,154 DEBUG - Starting WinSW in service mode
+2024-05-22 19:40:29,203 INFO  - Service 'webapp (webapp)' started successfully.
+2024-05-22 19:40:29,398 INFO  - Starting C:\Users\User\AppData\Local\Programs\Python\Python312\python.exe -m waitress --listen=*:8000 store_manager.wsgi:application
+2024-05-22 19:40:29,446 INFO  - Started process 12752
+2024-05-22 19:40:29,470 DEBUG - Forwarding logs of the process System.Diagnostics.Process (python) to WinSW.SizeBasedRollingLogAppender

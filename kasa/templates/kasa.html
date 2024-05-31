@@ -342,7 +342,7 @@
             usdprice = usdprice.toFixed(1).replace(/\d(?=(\d{3})+\.)/g, '$&,');
             document.getElementById('totalu').textContent  = '          USD ' + usdprice
             document.getElementById('totalu').removeAttribute("hidden");
-            let euprice = totalPrice*{{ euro }}
+            let euprice = totalPrice*{{ euro }};
             euprice = euprice.toLocaleString();
             document.getElementById('totall').textContent  = '          LEK ' + euprice
             document.getElementById('totall').removeAttribute("hidden");
@@ -397,7 +397,7 @@
             usdprice = usdprice.toFixed(1).replace(/\d(?=(\d{3})+\.)/g, '$&,');;
             document.getElementById('totalu').textContent  = '          USD ' + usdprice
             document.getElementById('totalu').removeAttribute("hidden");
-            euprice = totalPrice*{{ euro }}
+            euprice = totalPrice*{{ euro }};
             euprice = euprice.toLocaleString();
             document.getElementById('totall').textContent  = '          LEK ' + euprice
             document.getElementById('totall').removeAttribute("hidden");
@@ -470,7 +470,7 @@
                         var listItem = document.createElement('li');
                         listItem.classList.add('list-group-item');
                         listItem.classList.add('fw-bold');
-                        euprice = totalPrice*{{ euro }}
+                        euprice = totalPrice*{{ euro }};
                         euprice = euprice.toLocaleString();
                         listItem.textContent = '          LEK ' + euprice
                         printItemsList.appendChild(listItem);

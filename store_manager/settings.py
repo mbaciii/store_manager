@@ -23,7 +23,7 @@ LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
 SECRET_KEY = 'django-insecure-0dd)4d(f2nzah6h2trq7$w50@xjb82mu_h4bg*hg*k$uu!_$b4'
 
 EURO = 101
-DOLLAR = 94
+DOLLAR = 93
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

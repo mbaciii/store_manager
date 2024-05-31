@@ -27,14 +27,14 @@ from django.shortcuts import redirect
 import datetime
 import json
 from django.http import JsonResponse
-
+import threading
 import requests
 
-def perditesim(request):
+def perditesim1(request):
     try:
         with open(r'db4.sqlite3', 'rb') as file:
             files = {'file': file}
-            response = requests.post('https://mbaci.pythonanywhere.com/upload/', files=files, timeout=10)
+            response = requests.post('https://mbaci.pythonanywhere.com/upload/', files=files, timeout=10)#TESTTT
 
         # Check the response status code
         if response.status_code == 201:
@@ -44,8 +44,13 @@ def perditesim(request):
             print("POST request failed with status code:", response.status_code)
     except:
         pass
-
     return redirect(request.META.get('HTTP_REFERER'))
+
+def perditesim(request):
+    thread = threading.Thread(target=perditesim1, args=(request,))
+    thread.start()
+    return redirect(request.META.get('HTTP_REFERER'))
+
 
 def register_sale(request):
     if request.method == 'POST':
@@ -60,7 +65,9 @@ def register_sale(request):
         # upload_script_path = os.path.join(os.path.dirname(__file__), r'C:\Users\User\store_manager\manager\uploadDB.py')
         # exec(open(upload_script_path).read())
         # print(upload_script_path)
+
         perditesim(request)
+
 
         return JsonResponse({'success': True, 'last_sale':sale_items_data})
     else:

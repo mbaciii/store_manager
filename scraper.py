@@ -25,7 +25,7 @@ import re, math
 
 def edit_settings_variable(variable_name, new_value):
     # Path to settings.py file
-    settings_file = r'C:\Users\User\store_manager\store_manager/settings.py'
+    settings_file = r'C:\Users\User\store_manager\store_manager\settings.py'
 
     # Regular expression pattern to match the variable assignment
     pattern = re.compile(r'^(?P<variable>{})\s*=\s*(?P<value>.*)'.format(re.escape(variable_name)), re.MULTILINE)
